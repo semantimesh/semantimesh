@@ -5,75 +5,167 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SemantiMesh — Семантическая беспроводная сеть будущего</title>
     <style>
-        body { font-family: system-ui, sans-serif; margin: 0; padding: 0; background: #0a0a0f; color: #e0e0e0; line-height: 1.7; }
-        .container { max-width: 980px; margin: 0 auto; padding: 60px 20px; }
-        header { text-align: center; padding: 80px 20px 60px; border-bottom: 1px solid #222; }
-        h1 { font-size: 2.9rem; margin: 0 0 16px 0; color: #ffffff; }
-        .subtitle { font-size: 1.4rem; color: #a0a0c0; max-width: 720px; margin: 0 auto; }
-        .section { margin: 80px 0; }
-        h2 { font-size: 1.9rem; margin-bottom: 28px; color: #ffffff; }
-        .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 28px; }
-        .card { background: #111118; padding: 32px; border-radius: 12px; border: 1px solid #222; }
-        img { max-width: 100%; border-radius: 12px; margin: 20px 0; box-shadow: 0 4px 20px rgba(0,0,0,0.4); }
-        .btn { display: inline-block; background: #00d4aa; color: #000; padding: 15px 34px; font-weight: 600; border-radius: 8px; text-decoration: none; margin: 12px 8px 12px 0; }
-        .btn-secondary { background: transparent; color: #00d4aa; border: 1px solid #00d4aa; }
-        footer { text-align: center; padding: 80px 20px 40px; color: #666; font-size: 0.95rem; }
+        body { margin:0; padding:0; overflow-x:hidden; font-family: system-ui, sans-serif; background:#0a0a0f; color:#e0e0e0; }
+        canvas { position:fixed; top:0; left:0; z-index:-1; width:100%; height:100%; }
+        .container { max-width:980px; margin:0 auto; padding:60px 20px; position:relative; z-index:2; }
+        h1 { font-size:2.9rem; margin:0 0 16px 0; color:#ffffff; text-align:center; }
+        .subtitle { font-size:1.4rem; color:#a0a0c0; text-align:center; max-width:720px; margin:0 auto 40px; }
+        .section { margin:80px 0; }
+        h2 { font-size:1.9rem; margin-bottom:28px; color:#ffffff; }
+        .card-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(300px,1fr)); gap:28px; }
+        .card { background:#111118; padding:32px; border-radius:12px; border:1px solid #222; }
+        .btn { display:inline-block; background:#00d4aa; color:#000; padding:15px 34px; font-weight:600; border-radius:8px; text-decoration:none; margin:12px 8px 12px 0; }
+        .btn-secondary { background:transparent; color:#00d4aa; border:1px solid #00d4aa; }
+        footer { text-align:center; padding:80px 20px 40px; color:#666; font-size:0.95rem; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>SemantiMesh</h1>
-            <p class="subtitle">Семантическая беспроводная сеть для оффлайн-передачи информации и платежей</p>
-            <div style="margin-top: 40px;">
-                <a href="WHITEPAPER.md" class="btn" target="_blank">Читать Whitepaper</a>
-                <a href="https://github.com/semantimesh" class="btn btn-secondary" target="_blank">GitHub</a>
-            </div>
-        </header>
 
-        <div class="section">
-            <h2>Технология семантических меток</h2>
-            <p>SemantiMesh использует принципиально новый подход: вместо тяжёлых файлов передаются компактные <strong>семантические метки</strong> — математическое описание смысла контента.</p>
-            <p>AI-энкодер сжимает данные в тысячи раз, а AI-декодер на приёмнике генерирует контент, близкий к оригиналу по смыслу и качеству.</p>
-        </div>
+<canvas id="meshCanvas"></canvas>
 
-        <div class="section">
-            <h2>SemantiPay — шлюз оффлайн-платежей</h2>
-            <p>SemantiPay позволяет проводить платежи токеном $SEMANTI полностью без интернета. Метка платежа создаётся локально, подписывается, передаётся по беспроводной сети и подтверждается на приёмной стороне. При появлении любого узла с интернетом происходит окончательное settlement на блокчейне.</p>
-            <p>Это создаёт настоящую децентрализованную экономику в условиях отключённого интернета — платежи работают так же надёжно, как и передача сообщений.</p>
-        </div>
+<div class="container">
+    <h1>SemantiMesh</h1>
+    <p class="subtitle">Семантическая беспроводная сеть будущего<br>Открытая технология на блокчейне</p>
 
-        <div class="section">
-            <h2>Беспроводные протоколы и умная маршрутизация</h2>
-            <div class="card-grid">
-                <div class="card">
-                    <h3>LoRa Mesh</h3>
-                    <p>Базовый протокол для дальней связи с низким энергопотреблением и store-and-forward.</p>
-                </div>
-                <div class="card">
-                    <h3>Wi-Fi HaLow и BLE Mesh</h3>
-                    <p>Средняя дальность и высокая плотность узлов.</p>
-                </div>
-                <div class="card">
-                    <h3>Free-Space Optics (FSO)</h3>
-                    <p>Высокоскоростная лазерная связь для мгновенной передачи меток.</p>
-                </div>
-                <div class="card">
-                    <h3>Умная маршрутизация</h3>
-                    <p>Semantic-Aware Routing (по смыслу и приоритету метки), Multi-Path и Reputation-based — метки доходят максимально эффективно и надёжно.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2>Fair Launch $SEMANTI</h2>
-            <p>Мы строим сеть, в которой ценность создаётся сообществом. Токен $SEMANTI будет распределён честно через points-программу и вклад в развитие проекта.</p>
-            <p>Те, кто запускает ноды, улучшает модули, тестирует систему или вносит идеи — получают токены естественно, без просьб и давления.</p>
-        </div>
-
-        <footer>
-            © 2026 SemantiMesh DAO • GPL-3.0 • US Provisional Patent Pending
-        </footer>
+    <div class="section">
+        <h2>Технология семантических меток</h2>
+        <p>AI-агенты преобразуют контент в компактные семантические метки, которые передаются по беспроводной сети и генерируются на приёмной стороне. Всё работает полностью оффлайн и открыто.</p>
     </div>
+
+    <div class="section">
+        <h2>SemantiPay — шлюз оффлайн-платежей на блокчейне</h2>
+        <p>Полностью децентрализованный протокол платежей $SEMANTI. Метка платежа создаётся и подписывается локально, передаётся по сети, а settlement происходит на блокчейне при появлении интернета. Открытый код, прозрачная работа через Solana + Cosmos.</p>
+    </div>
+
+    <div class="section">
+        <h2>Беспроводные протоколы и умная маршрутизация</h2>
+        <div class="card-grid">
+            <div class="card"><h3>LoRa Mesh</h3><p>Базовый модуль для дальней связи</p></div>
+            <div class="card"><h3>Wi-Fi HaLow / BLE Mesh</h3><p>Средняя дальность и плотные сети</p></div>
+            <div class="card"><h3>Free-Space Optics</h3><p>Высокоскоростная лазерная связь</p></div>
+            <div class="card"><h3>Умная маршрутизация</h3><p>Semantic-Aware + Multi-Path + Reputation-based</p></div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Fair Launch $SEMANTI</h2>
+        <p>Технология полностью открыта. Токены получают за реальный вклад в сеть — разработку, тестирование, запуск нод. Ценность создаётся сообществом естественно.</p>
+    </div>
+
+    <footer>
+        © 2026 SemantiMesh DAO • GPL-3.0 • Открытый код • Работает через блокчейн
+    </footer>
+</div>
+
+<script>
+// Анимация фона: метки прыгают между точками
+const canvas = document.getElementById('meshCanvas');
+const ctx = canvas.getContext('2d');
+
+function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
+resize();
+window.addEventListener('resize', resize);
+
+let nodes = [];
+let tokens = [];
+
+class Node {
+    constructor(x, y) {
+        this.x = x;
+        this.y = y;
+        this.radius = 3;
+    }
+}
+
+class Token {
+    constructor(startNode, endNode) {
+        this.x = startNode.x;
+        this.y = startNode.y;
+        this.targetX = endNode.x;
+        this.targetY = endNode.y;
+        this.progress = 0;
+        this.speed = Math.random() * 0.015 + 0.01;
+        this.size = 4;
+        this.color = '#00d4aa';
+    }
+    update() {
+        this.progress += this.speed;
+        if (this.progress >= 1) this.progress = 1;
+        this.x = this.x + (this.targetX - this.x) * this.speed;
+        this.y = this.y + (this.targetY - this.y) * this.speed;
+    }
+}
+
+function createNodes() {
+    nodes = [];
+    const cols = 12;
+    const rows = 8;
+    const spacingX = canvas.width / (cols + 1);
+    const spacingY = canvas.height / (rows + 1);
+    for (let y = 0; y < rows; y++) {
+        for (let x = 0; x < cols; x++) {
+            nodes.push(new Node(
+                spacingX * (x + 1) + (Math.random() * 40 - 20),
+                spacingY * (y + 1) + (Math.random() * 40 - 20)
+            ));
+        }
+    }
+}
+
+function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    // Узлы и связи
+    ctx.strokeStyle = 'rgba(0, 212, 170, 0.15)';
+    ctx.lineWidth = 1;
+    for (let i = 0; i < nodes.length; i++) {
+        for (let j = i + 1; j < nodes.length; j++) {
+            if (Math.random() > 0.92) {
+                ctx.beginPath();
+                ctx.moveTo(nodes[i].x, nodes[i].y);
+                ctx.lineTo(nodes[j].x, nodes[j].y);
+                ctx.stroke();
+            }
+        }
+    }
+
+    // Узлы
+    ctx.fillStyle = '#00d4aa';
+    for (let node of nodes) {
+        ctx.beginPath();
+        ctx.arc(node.x, node.y, node.radius, 0, Math.PI * 2);
+        ctx.fill();
+    }
+
+    // Метки (токены)
+    for (let i = tokens.length - 1; i >= 0; i--) {
+        let t = tokens[i];
+        t.update();
+        ctx.fillStyle = t.color;
+        ctx.globalAlpha = 1 - t.progress;
+        ctx.beginPath();
+        ctx.arc(t.x, t.y, t.size, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.globalAlpha = 1;
+
+        if (t.progress >= 1) tokens.splice(i, 1);
+    }
+
+    // Создаём новые метки
+    if (Math.random() < 0.12) {
+        const start = nodes[Math.floor(Math.random() * nodes.length)];
+        const end = nodes[Math.floor(Math.random() * nodes.length)];
+        if (start !== end) tokens.push(new Token(start, end));
+    }
+
+    requestAnimationFrame(draw);
+}
+
+createNodes();
+draw();
+</script>
 </body>
 </html>

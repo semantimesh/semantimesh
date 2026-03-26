@@ -6,56 +6,74 @@
     <title>SemantiMesh — Семантическая беспроводная сеть будущего</title>
     <style>
         body { font-family: system-ui, sans-serif; margin: 0; padding: 0; background: #0a0a0f; color: #e0e0e0; line-height: 1.7; }
-        .container { max-width: 960px; margin: 0 auto; padding: 60px 20px; }
-        h1 { font-size: 2.8rem; margin-bottom: 12px; color: #ffffff; }
-        .subtitle { font-size: 1.35rem; color: #a0a0c0; }
+        .container { max-width: 980px; margin: 0 auto; padding: 60px 20px; }
+        header { text-align: center; padding: 80px 20px 60px; border-bottom: 1px solid #222; }
+        h1 { font-size: 2.9rem; margin: 0 0 16px 0; color: #ffffff; }
+        .subtitle { font-size: 1.4rem; color: #a0a0c0; max-width: 720px; margin: 0 auto; }
         .section { margin: 80px 0; }
-        h2 { font-size: 1.85rem; margin-bottom: 24px; color: #ffffff; }
+        h2 { font-size: 1.9rem; margin-bottom: 28px; color: #ffffff; }
         .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 28px; }
         .card { background: #111118; padding: 32px; border-radius: 12px; border: 1px solid #222; }
-        .btn { display: inline-block; background: #00d4aa; color: #000; padding: 14px 32px; font-weight: 600; border-radius: 8px; text-decoration: none; margin: 12px 8px 12px 0; }
-        img { max-width: 100%; border-radius: 8px; margin: 20px 0; }
+        img { max-width: 100%; border-radius: 12px; margin: 20px 0; box-shadow: 0 4px 20px rgba(0,0,0,0.4); }
+        .btn { display: inline-block; background: #00d4aa; color: #000; padding: 15px 34px; font-weight: 600; border-radius: 8px; text-decoration: none; margin: 12px 8px 12px 0; }
+        .btn-secondary { background: transparent; color: #00d4aa; border: 1px solid #00d4aa; }
+        footer { text-align: center; padding: 80px 20px 40px; color: #666; font-size: 0.95rem; }
     </style>
 </head>
 <body>
     <div class="container">
-        <header style="text-align:center; padding:60px 20px;">
+        <header>
             <h1>SemantiMesh</h1>
             <p class="subtitle">Семантическая беспроводная сеть для оффлайн-передачи информации и платежей</p>
-            <div style="margin-top:40px;">
+            <div style="margin-top: 40px;">
                 <a href="WHITEPAPER.md" class="btn" target="_blank">Читать Whitepaper</a>
-                <a href="https://github.com/semantimesh" class="btn" style="background:transparent; border:1px solid #00d4aa; color:#00d4aa;" target="_blank">GitHub</a>
+                <a href="https://github.com/semantimesh" class="btn btn-secondary" target="_blank">GitHub</a>
             </div>
         </header>
 
         <div class="section">
             <h2>Технология семантических меток</h2>
-            <p>Метка — это компактное семантическое описание контента. AI-энкодер сжимает данные в тысячи раз, а декодер генерирует контент на приёмнике.</p>
+            <p>SemantiMesh использует принципиально новый подход: вместо тяжёлых файлов передаются компактные <strong>семантические метки</strong> — математическое описание смысла контента.</p>
             
-            <img src="https://i.imgur.com/placeholder1.jpg" alt="Semantic encoding diagram"> <!-- Заменится на реальные после рендера -->
-            
-            <p>Это позволяет передавать большие объёмы смысла даже по медленным каналам.</p>
+            <img src="https://i.imgur.com/placeholder-semantic1.jpg" alt="Semantic Encoding Diagram"> 
+            <!-- Здесь будут реальные изображения после рендера -->
+
+            <p>AI-энкодер сжимает данные в тысячи раз, а AI-декодер на приёмнике генерирует контент, близкий к оригиналу по смыслу и качеству.</p>
         </div>
 
         <div class="section">
             <h2>Беспроводные протоколы и маршрутизация</h2>
             <div class="card-grid">
                 <div class="card">
-                    <h3>LoRa Mesh</h3>
-                    <p>Базовый протокол: дальность, низкое энергопотребление, store-and-forward.</p>
+                    <h3>LoRa Mesh (базовый)</h3>
+                    <p>Дальность до 50 км, низкое энергопотребление, store-and-forward.</p>
                 </div>
                 <div class="card">
-                    <h3>Оптические каналы</h3>
-                    <p>Free-space optics и Li-Fi — высокая скорость для мгновенной передачи меток.</p>
+                    <h3>Wi-Fi HaLow и BLE Mesh</h3>
+                    <p>Средняя дальность, высокая плотность узлов, баланс скорости и энергопотребления.</p>
+                </div>
+                <div class="card">
+                    <h3>Free-Space Optics (FSO)</h3>
+                    <p>Высокоскоростная лазерная связь через воздух — для мгновенной передачи меток.</p>
                 </div>
                 <div class="card">
                     <h3>Умная маршрутизация</h3>
-                    <p>Semantic-Aware + Multi-Path + Reputation-based — метки доставляются умно и надёжно.</p>
+                    <p>Semantic-Aware Routing (по смыслу метки), Multi-Path и Reputation-based — метки доставляются оптимально и надёжно.</p>
                 </div>
             </div>
+
+            <!-- Добавляем изображения -->
+            <img src="https://i.imgur.com/placeholder-lora.jpg" alt="LoRa Mesh"> 
+            <img src="https://i.imgur.com/placeholder-fso.jpg" alt="Free-Space Optics"> 
+            <img src="https://i.imgur.com/placeholder-routing.jpg" alt="Smart Routing">
         </div>
 
-        <footer style="text-align:center; padding:60px 20px; color:#666;">
+        <div class="section">
+            <h2>Fair Launch $SEMANTI</h2>
+            <p>Только для сообщества. 55 % токенов — на airdrop и points-программу. Никаких инвесторов.</p>
+        </div>
+
+        <footer>
             © 2026 SemantiMesh DAO • GPL-3.0 • US Provisional Patent Pending
         </footer>
     </div>

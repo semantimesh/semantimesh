@@ -1,159 +1,66 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SemantiMesh — Семантическая беспроводная сеть будущего</title>
-    <style>
-        body { 
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif; 
-            margin: 0; 
-            padding: 0; 
-            background: #0a0a0f; 
-            color: #e0e0e0; 
-            line-height: 1.7;
-        }
-        .container { 
-            max-width: 960px; 
-            margin: 0 auto; 
-            padding: 60px 20px; 
-        }
-        header {
-            text-align: center;
-            padding: 80px 20px 60px;
-            border-bottom: 1px solid #222;
-        }
-        h1 { 
-            font-size: 2.8rem; 
-            margin: 0 0 12px 0; 
-            color: #ffffff;
-        }
-        .subtitle {
-            font-size: 1.35rem;
-            color: #a0a0c0;
-            max-width: 680px;
-            margin: 0 auto;
-        }
-        .section {
-            margin: 80px 0;
-        }
-        h2 {
-            font-size: 1.85rem;
-            margin-bottom: 24px;
-            color: #ffffff;
-        }
-        .card-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 28px;
-        }
-        .card {
-            background: #111118;
-            padding: 32px 28px;
-            border-radius: 12px;
-            border: 1px solid #222;
-        }
-        .btn {
-            display: inline-block;
-            background: #00d4aa;
-            color: #000;
-            padding: 14px 32px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            border-radius: 8px;
-            text-decoration: none;
-            margin: 12px 8px 12px 0;
-        }
-        .btn-secondary {
-            background: transparent;
-            color: #00d4aa;
-            border: 1px solid #00d4aa;
-        }
-        footer {
-            text-align: center;
-            padding: 60px 20px 40px;
-            color: #666;
-            font-size: 0.95rem;
-        }
-        a { color: #00d4aa; text-decoration: none; }
-        a:hover { text-decoration: underline; }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <header>
-            <h1>SemantiMesh</h1>
-            <p class="subtitle">
-                Семантическая беспроводная сеть для оффлайн-передачи информации и платежей
-            </p>
-            <div style="margin-top: 40px;">
-                <a href="WHITEPAPER.md" class="btn" target="_blank">Читать Whitepaper</a>
-                <a href="https://github.com/semantimesh" class="btn btn-secondary" target="_blank">GitHub</a>
-            </div>
-        </header>
+## 1. Технология семантических меток
 
-        <div class="section">
-            <h2>Технология семантических меток</h2>
-            <p>
-                SemantiMesh использует принципиально новый подход к передаче данных. 
-                Вместо тяжёлых файлов система передаёт <strong>семантические метки</strong> — компактные математические представления смысла контента.
-            </p>
-            <p>
-                AI-энкодер на устройстве отправителя сжимает видео, аудио или изображение в метку объёмом от нескольких сотен байт до десятков килобайт. 
-                AI-декодер на приёмной стороне генерирует контент, который по смыслу и качеству максимально близок к оригиналу.
-            </p>
-            <p>
-                Это позволяет передавать большие объёмы информации даже по низкоскоростным беспроводным каналам.
-            </p>
-        </div>
+Метка — это **семантическое ядро** контента. Вместо передачи тяжёлых файлов (видео, фото, аудио) система передаёт только математическое описание смысла, структуры и ключевых характеристик.
 
-        <div class="section">
-            <h2>Ключевые возможности</h2>
-            <div class="card-grid">
-                <div class="card">
-                    <h3>Модульная архитектура</h3>
-                    <p>Система построена как конструктор: любой протокол передачи (LoRa, оптические каналы и будущие технологии) подключается как плагин без перестройки всей сети.</p>
-                </div>
-                <div class="card">
-                    <h3>AI Contributor Swarm</h3>
-                    <p>Автономные AI-агенты анализируют вклад разработчиков и автоматически начисляют токены $SEMANTI.</p>
-                </div>
-                <div class="card">
-                    <h3>SemantiPay</h3>
-                    <p>Полностью оффлайн-платежи через беспроводную сеть с последующим settlement на блокчейне.</p>
-                </div>
-                <div class="card">
-                    <h3>Гибкая этика</h3>
-                    <p>Модуль гуманного поведения полностью настраивается пользователем — от полного отсутствия фильтров до строгих правил. Решение принимает сообщество через DAO.</p>
-                </div>
-            </div>
-        </div>
+**Пример:**
+- Оригинальное видео 4K, 30 секунд → 300–800 МБ
+- Семантическая метка → 2–40 КБ (сжатие в тысячи раз)
 
-        <div class="section">
-            <h2>Fair Launch $SEMANTI</h2>
-            <p>
-                Токен-сэйл пройдёт только через сообщество. 55 % supply выделено на airdrop и points-программу. 
-                Никаких предпродаж и инвесторов.
-            </p>
-            <p>
-                Запускайте ноды, тестируйте модули, вносите вклад — получайте токены.
-            </p>
-        </div>
+**Состав метки:**
+- Латентные токены (компактное представление кадров, движения, звука и освещения)
+- Семантический промпт (описание сцены, действий, тона и контекста)
+- Параметры стиля, эмоции и динамики
+- Криптографический хэш для проверки целостности
 
-        <div class="section">
-            <h2>Статус проекта</h2>
-            <p>
-                • US Provisional Patent Pending<br>
-                • Разработка MVP и testnet (март–апрель 2026)<br>
-                • Fair launch планируется на август 2026
-            </p>
-        </div>
+**Процесс работы (полностью оффлайн):**
+1. **Кодирование** — локальный AI-энкодер на NPU смартфона создаёт метку.
+2. **Передача** — метка отправляется по беспроводной сети.
+3. **Декодирование** — AI-декодер генерирует контент, максимально близкий к оригиналу по смыслу и восприятию.
 
-        <footer>
-            © 2026 SemantiMesh DAO • GPL-3.0 • 
-            <a href="https://github.com/semantimesh">GitHub</a> • 
-            Whitepaper • Семантическая беспроводная сеть будущего
-        </footer>
-    </div>
-</body>
-</html>
+<grok-card data-id="02dc92" data-type="image_card" data-plain-type="render_searched_image"  data-arg-image_id="qn1Rt"  data-arg-size="LARGE" ></grok-card>
+
+
+<grok-card data-id="926e53" data-type="image_card" data-plain-type="render_searched_image"  data-arg-image_id="KMym7"  data-arg-size="LARGE" ></grok-card>
+
+
+<grok-card data-id="7c48b6" data-type="image_card" data-plain-type="render_searched_image"  data-arg-image_id="jQtk6"  data-arg-size="LARGE" ></grok-card>
+
+
+## 2. Беспроводные протоколы передачи меток
+
+Благодаря малому размеру меток и модульной архитектуре система поддерживает разные протоколы как WASM-плагины:
+
+**LoRa (базовый модуль для дальней связи)**
+- Дальность: до 10–50 км в сельской местности.
+- Низкое энергопотребление, store-and-forward.
+
+<grok-card data-id="9df0ca" data-type="image_card" data-plain-type="render_searched_image"  data-arg-image_id="ozzzm"  data-arg-size="LARGE" ></grok-card>
+
+
+<grok-card data-id="bfb5cb" data-type="image_card" data-plain-type="render_searched_image"  data-arg-image_id="qKgu9"  data-arg-size="LARGE" ></grok-card>
+
+
+**Wi-Fi HaLow и BLE Mesh (средняя дальность и плотные сети)**
+- Wi-Fi HaLow: до 1 км, выше скорость чем LoRa.
+- BLE Mesh / Thread: низкое потребление, хорошая масштабируемость в городах и помещениях.
+
+**Free-Space Optics (FSO — высокоскоростной модуль)**
+- Лазерная связь через воздух.
+- Скорость до нескольких Гбит/с — метки передаются мгновенно.
+- Ограничение: требует прямой видимости, чувствителен к погоде.
+
+<grok-card data-id="473f9a" data-type="image_card" data-plain-type="render_searched_image"  data-arg-image_id="DbkBw"  data-arg-size="LARGE" ></grok-card>
+
+
+<grok-card data-id="dd7546" data-type="image_card" data-plain-type="render_searched_image"  data-arg-image_id="OrUlz"  data-arg-size="LARGE" ></grok-card>
+
+
+**Умная маршрутизация меток**
+- **Semantic-Aware Routing** — AI анализирует смысл и приоритет метки перед ретрансляцией.
+- **Multi-Path Routing** — критические метки идут по нескольким путям одновременно.
+- **Reputation-based Routing** — предпочтение надёжным узлам с хорошей репутацией и энергоснабжением.
+
+<grok-card data-id="c86ab0" data-type="image_card" data-plain-type="render_searched_image"  data-arg-image_id="pb5mP"  data-arg-size="LARGE" ></grok-card>
+
+
+<grok-card data-id="a93a8c" data-type="image_card" data-plain-type="render_searched_image"  data-arg-image_id="DbUtc"  data-arg-size="LARGE" ></grok-card>

@@ -3,163 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SemantiMesh — Живая семантическая беспроводная сеть</title>
-    <style>
-        body { margin:0; padding:0; font-family: system-ui, sans-serif; background:#0a0a0f; color:#e0e0e0; overflow-x:hidden; }
-        canvas { position:fixed; top:0; left:0; z-index:-1; width:100%; height:100%; }
-        .container { max-width:980px; margin:0 auto; padding:60px 20px; position:relative; z-index:2; }
-        h1 { font-size:2.9rem; margin:0 0 16px 0; color:#ffffff; text-align:center; }
-        .subtitle { font-size:1.4rem; color:#a0a0c0; text-align:center; max-width:720px; margin:0 auto 40px; }
-        .section { margin:80px 0; }
-        h2 { font-size:1.9rem; margin-bottom:28px; color:#ffffff; }
-        .highlight { color:#00d4aa; font-weight:500; }
-        .btn { display:inline-block; background:#00d4aa; color:#000; padding:15px 34px; font-weight:600; border-radius:8px; text-decoration:none; margin:12px 8px 12px 0; }
-        .btn-secondary { background:transparent; color:#00d4aa; border:1px solid #00d4aa; }
-        .smartphone { text-align:center; margin:40px 0; }
-        img.smartphone-img { max-width:420px; width:100%; border-radius:30px; box-shadow:0 20px 40px rgba(0,212,170,0.3); }
-        footer { text-align:center; padding:80px 20px 40px; color:#666; font-size:0.95rem; }
-    </style>
+    <title>SemantiMesh — Децентрализованная офлайн‑сеть</title>
+    <meta name="description" content="Mesh‑сеть с семантическим сжатием и блокчейном для связи без интернета">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
-<canvas id="meshCanvas"></canvas>
-
-<div class="container">
-    <h1>SemantiMesh</h1>
-    <p class="subtitle">Живая семантическая беспроводная сеть будущего.<br>Открытая технология, которую развивает сообщество.</p>
-
-    <div class="smartphone">
-        <img src="https://i.imgur.com/7vL2kPq.png" alt="Смартфон SemantiMesh с исходящими метками" class="smartphone-img">
-        <p style="margin-top:12px; font-size:0.95rem; color:#00d4aa;">Смартфон → семантические метки → беспроводная сеть → генерация контента</p>
-    </div>
-
-    <div class="section">
-        <h2>Технология семантических меток</h2>
-        <p>SemantiMesh передаёт не тяжёлые файлы, а <span class="highlight">семантические метки</span> — компактное математическое описание смысла контента. AI-энкодер сжимает данные в тысячи раз, AI-декодер на приёмнике генерирует контент, близкий к оригиналу. Всё работает полностью оффлайн.</p>
-    </div>
-
-    <div class="section">
-        <h2>SemantiPay — шлюз оффлайн-платежей на блокчейне</h2>
-        <p>Полностью децентрализованный протокол. Метка платежа создаётся и подписывается локально, передаётся по сети, а settlement происходит на блокчейне (Solana + Cosmos) при появлении интернета.</p>
-    </div>
-
-    <div class="section">
-        <h2>Беспроводные протоколы и умная маршрутизация</h2>
-        <p>Модульная архитектура позволяет использовать LoRa, Wi-Fi HaLow, BLE Mesh, Free-Space Optics и будущие протоколы. Маршрутизация — Semantic-Aware (по смыслу метки), Multi-Path и Reputation-based.</p>
-    </div>
-
-    <div class="section">
-        <h2>Перспективы сотрудничества</h2>
-        <p>Проект живой и открыт для всех. Сообщество решает, какие модули добавлять, как развивать маршрутизацию, протоколы и этику. Каждый может:</p>
-        <ul style="margin:20px 0; padding-left:20px;">
-            <li>Добавить новый беспроводной протокол как WASM-плагин</li>
-            <li>Улучшить AI-модели меток</li>
-            <li>Запустить ноду и получать награды</li>
-            <li>Предложить изменения через GitHub и DAO</li>
+    <header>
+        <h1>SemantiMesh</h1>
+        <p>Связь без границ: даже там, где нет интернета</p>
+    </header>
+    <section>
+        <h2>Проблема</h2>
+        <p>3,7 млрд человек живут без стабильного интернета. В ЧС связь часто недоступна.</p>
+    </section>
+    <section>
+        <h2>Решение</h2>
+        <p>Офлайн‑чат и передача данных через mesh‑сеть с семантическим сжатием.</p>
+        <video controls width="100%">
+            <source src="images/demo-video.mp4" type="video/mp4">
+            Ваш браузер не поддерживает видео.
+        </video>
+    </section>
+    <section>
+        <h2>Ключевые метрики</h2>
+        <ul>
+            <li>Задержка: < 3 с</li>
+            <li>Сжатие данных: ≥ 15×</li>
+            <li>Число нод: ≥ 50 000 через 18 месяцев</li>
         </ul>
-        <p>AI Contributor Swarm автоматически награждает реальный вклад токенами $SEMANTI. Ценность рождается естественно — от людей, которые хотят участвовать.</p>
-    </div>
-
-    <div class="section" style="text-align:center;">
-        <a href="WHITEPAPER.md" class="btn" target="_blank">Полный Whitepaper</a>
-        <a href="https://github.com/semantimesh" class="btn btn-secondary" target="_blank">Присоединиться к развитию</a>
-    </div>
-
+    </section>
     <footer>
-        © 2026 SemantiMesh DAO • Полностью открытый проект • Развивается сообществом • GPL-3.0
+        <a href="whitepaper.pdf" class="btn">Скачать Whitepaper</a>
+        <p>© 2026 SemantiMesh. Все права защищены.</p>
     </footer>
-</div>
-
-<script>
-// Живой фон: метки медленно плывут, ускоряются при взаимодействии
-const canvas = document.getElementById('meshCanvas');
-const ctx = canvas.getContext('2d');
-let nodes = [], tokens = [];
-let speedMultiplier = 1; // по умолчанию медленно
-
-function resize() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-}
-resize();
-window.addEventListener('resize', resize);
-
-// Ускорение при движении мыши или касании
-canvas.addEventListener('mousemove', () => { speedMultiplier = 2.8; setTimeout(() => speedMultiplier = 1, 1200); });
-canvas.addEventListener('touchmove', () => { speedMultiplier = 2.8; setTimeout(() => speedMultiplier = 1, 1200); });
-
-class Node { constructor(x,y){this.x=x;this.y=y;this.radius=3.5;} }
-class Token {
-    constructor(start,end){
-        this.x = start.x; this.y = start.y;
-        this.targetX = end.x; this.targetY = end.y;
-        this.progress = 0;
-        this.speed = (Math.random()*0.012 + 0.008) * speedMultiplier;
-    }
-    update(){
-        this.progress += this.speed;
-        this.x += (this.targetX - this.x) * this.speed;
-        this.y += (this.targetY - this.y) * this.speed;
-    }
-}
-
-function createNodes(){
-    nodes = [];
-    const count = 48;
-    for(let i=0;i<count;i++){
-        nodes.push(new Node(Math.random()*canvas.width, Math.random()*canvas.height));
-    }
-}
-
-function draw(){
-    ctx.clearRect(0,0,canvas.width,canvas.height);
-
-    // Связи
-    ctx.strokeStyle = 'rgba(0,212,170,0.14)';
-    for(let i=0;i<nodes.length;i++){
-        for(let j=i+1;j<nodes.length;j++){
-            if(Math.hypot(nodes[i].x-nodes[j].x, nodes[i].y-nodes[j].y) < 190){
-                ctx.beginPath();
-                ctx.moveTo(nodes[i].x, nodes[i].y);
-                ctx.lineTo(nodes[j].x, nodes[j].y);
-                ctx.stroke();
-            }
-        }
-    }
-
-    // Узлы
-    ctx.fillStyle = '#00d4aa';
-    nodes.forEach(n => {
-        ctx.beginPath();
-        ctx.arc(n.x, n.y, n.radius, 0, Math.PI*2);
-        ctx.fill();
-    });
-
-    // Метки
-    for(let i=tokens.length-1;i>=0;i--){
-        let t = tokens[i];
-        t.update();
-        ctx.globalAlpha = 1 - t.progress*0.7;
-        ctx.fillStyle = '#00ffbb';
-        ctx.beginPath();
-        ctx.arc(t.x, t.y, 4.5, 0, Math.PI*2);
-        ctx.fill();
-        ctx.globalAlpha = 1;
-        if(t.progress >= 1) tokens.splice(i,1);
-    }
-
-    // Новые метки
-    if(Math.random() < 0.22){
-        const start = nodes[Math.floor(Math.random()*nodes.length)];
-        const end = nodes[Math.floor(Math.random()*nodes.length)];
-        if(start !== end) tokens.push(new Token(start, end));
-    }
-
-    requestAnimationFrame(draw);
-}
-
-createNodes();
-draw();
-</script>
 </body>
 </html>

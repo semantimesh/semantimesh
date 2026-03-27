@@ -68,7 +68,7 @@
         }
 
         header {
-            padding: 80px 0;
+            padding: 120px 0 80px;
             text-align: center;
             background: rgba(0, 0, 0, 0.3);
         }
@@ -87,7 +87,7 @@
         }
 
         section {
-            padding: 80px 0;
+            padding: 100px 0;
             background: rgba(10, 25, 45, 0.8);
             margin-bottom: 2px;
             backdrop-filter: blur(10px);
@@ -98,6 +98,12 @@
             margin-bottom: 40px;
             font-size: 2.2rem;
             color: #60a5fa;
+        }
+
+        h3 {
+            color: #60a5fa;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
         }
 
         .tech-grid {
@@ -122,12 +128,6 @@
             background: rgba(255, 255, 255, 0.15);
         }
 
-        .tech-card h3 {
-            color: #60a5fa;
-            margin-bottom: 15px;
-            font-size: 1.4rem;
-        }
-
         .tech-image {
             width: 100%;
             height: 200px;
@@ -149,10 +149,28 @@
             display: block;
         }
 
+        .metric-box {
+            background: rgba(96, 165, 250, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 10px 0;
+        }
+
+        .metric-title {
+            font-weight: bold;
+            color: #3b82f6;
+            margin-bottom: 5px;
+        }
+
         footer {
             text-align: center;
-            padding: 40px 0;
+            padding: 60px 0;
             background: rgba(0, 0, 0, 0.5);
+        }
+
+        /* Плавная прокрутка */
+        html {
+            scroll-behavior: smooth;
         }
     </style>
 </head>
@@ -169,6 +187,7 @@
             <li><a href="#poa" class="nav-link">PoA Консенсус</a></li>
             <li><a href="#security" class="nav-link">Безопасность</a></li>
             <li><a href="#efficiency" class="nav-link">Энергоэффективность</a></li>
+            <li><a href="#tokenomics" class="nav-link">Токеномика</a></li>
         </ul>
     </nav>
 
@@ -181,30 +200,18 @@
 
     <section id="overview">
         <div class="container">
-            <h2>Обзор технологий</h2>
+            <h2>Обзор проекта</h2>
             <div class="tech-grid">
-                <div class="tech-card" data-target="tinybert">
-                    <img src="images/tinybert.jpg" alt="TinyBERT" class="tech-image">
-            <h3>TinyBERT</h3>
-            <p>Оптимизированная NLP‑модель для семантического сжатия данных.</p>
+                <div class="tech-card">
+                    <img src="https://via.placeholder.com/400x200/3b82f6/ffffff?text=SemantiMesh+Architecture" alt="Архитектура" class="tech-image">
+            <h3>Ключевые особенности</h3>
+            <ul>
+                <li>Работа без интернета через BLE, Wi‑Fi Direct, LoRa</li>
+                <li>Семантическое сжатие данных (экономия трафика в 10–15×)</li>
+                <li>Задержка подтверждения: ≤ 3 с в кластере</li>
+                <li>Энергопотребление: ≤ 8 % батареи/час</li>
+                <li>Размер блока: ≤ 1 КБ (до 50 транзакций)</li>
+            </ul>
                 </div>
-                <div class="tech-card" data-target="mesh">
-            <img src="images/mesh-network.jpg" alt="Mesh‑сеть" class="tech-image">
-            <h3>Mesh‑сеть</h3>
-            <p>Гибридная маршрутизация через BLE, Wi‑Fi Direct и LoRa.</p>
-                </div>
-                <div class="tech-card" data-target="poa">
-            <img src="images/poa.jpg" alt="PoA Консенсус" class="tech-image">
-            <h3>PoA Консенсус</h3>
-            <p>Proof of Activity с супер‑валидаторами для синхронизации.</p>
-                </div>
-                <div class="tech-card" data-target="security">
-            <img src="images/security.jpg" alt="Безопасность" class="tech-image">
-            <h3>Безопасность</h3>
-            <p>AES‑256 шифрование и ECDSA подписи.</p>
-                </div>
-                <div class="tech-card" data-target="efficiency">
-            <img src="images/efficiency.jpg" alt="Энергоэффективность" class="tech-image">
-            <h3>Энергоэффективность</h3>
-            <p>Адаптивный режим ноды и оптимизация NLP‑модели.</p>
-                </div>
+                <div class="tech-card">
+            <img src="https://via.placeholder.com/400x200/3b82f6/ffffff?text=Use+Cases" alt="Сценарии использования" class="tech-image">

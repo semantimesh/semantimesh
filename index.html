@@ -1,228 +1,169 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SemantiMesh 2.0 — Децентрализованная mesh‑сеть</title>
-    <style>
-        :root {
-            --primary: #3b82f6;
-            --primary-dark: #2563eb;
-            --dark: #0f172a;
-            --dark-light: #1e293b;
-            --gray: #64748b;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            color: #fff;
-            overflow-x: hidden;
-            background: var(--dark);
-        }
-
-        /* Динамический фон */
-        #network-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Навигация */
-        nav {
-            background: rgba(15, 23, 42, 0.9);
-            backdrop-filter: blur(10px);
-            padding: 20px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            border-bottom: 1px solid rgba(96, 165, 250, 0.2);
-        }
-
-        .nav-list {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-            gap: 30px;
-        }
-
-        .nav-link {
-            color: #cbd5e1;
-            text-decoration: none;
-            font-weight: 500;
-            padding: 10px 15px;
-            border-radius: 8px;
-            transition: all 0.3s;
-            font-size: 0.9rem;
-        }
-
-        .nav-link:hover,
-        .nav-link.active {
-            background: var(--primary);
-            color: white;
-        }
-
-        header {
-            padding: 150px 0 100px;
-            text-align: center;
-            background: linear-gradient(135deg, var(--dark) 0%, #1a1f2e 100%);
-            position: relative;
-            overflow: hidden;
-        }
-
-        h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            background: linear-gradient(90deg, #60a5fa, #3b82f6);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: fadeIn 1s ease;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .tagline {
-            font-size: 1.3rem;
-            opacity: 0.9;
-            max-width: 600px;
-            margin: 0 auto 40px;
-            animation: fadeIn 1.5s ease;
-        }
-
-        .cta-buttons {
-            animation: fadeIn 2s ease;
-        }
-
-        .btn {
-            display: inline-block;
-            background: var(--primary);
-            color: white;
-            padding: 12px 30px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            margin: 0 10px;
-            transition: all 0.3s;
-        }
-
-        .btn:hover {
-            background: var(--primary-dark);
-            transform: translateY(-3px);
-        }
-
-        section {
-            padding: 100px 0;
-            margin-bottom: 2px;
-        }
-
-        .section-dark {
-            background: rgba(15, 23, 42, 0.8);
-            backdrop-filter: blur(10px);
-        }
-
-        .section-light {
-            background: rgba(30, 41, 59, 0.6);
-        }
-
-        h2 {
-            text-align: center;
-            margin-bottom: 60px;
-            font-size: 2.2rem;
-            color: var(--primary);
-        }
-
-        .tech-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px;
-            padding: 0 20px;
-        }
-
-        .tech-card {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 30px;
-            border-radius: 16px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(96, 165, 250, 0.2);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
-        }
-
-        .tech-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-
-        .tech-image {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 12px;
-            margin-bottom: 20px;
-        }
-
-        .tech-card h3 {
-            color: var(--primary);
-            margin-bottom: 15px;
-            font-size: 1.4rem;
-        }
-
-        .metrics-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            padding: 0 20px;
-        }
-
-        .metric-card {
-            text-align: center;
-            padding: 30px 20px;
-        }
-
-        .metric-number {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: var(--primary);
-            display: block;
-        }
-
-        footer {
-            text-align: center;
-            padding: 60px 0;
-            background: var(--dark);
-            border-top: 1px solid rgba(96, 165, 250, 0.2);
-        }
-
-        /* Плавная прокрутка */
-        html {
-            scroll-behavior: smooth;
-        }
-    </style>
+  <meta charset="utf-8">
+  <title>СемантикМеш 2.0 — семантический анализ с оффлайн‑режимом</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Динамический фон -->
-    <div id="network-bg"></div>
+  <!-- Шапка сайта -->
+  <header class="header">
+    <div class="container">
+      <a href="/" class="logo">СемантикМеш 2.0</a>
+      <nav class="nav">
+        <a href="#home">Главная</a>
+        <a href="#about">О проекте</a>
+        <a href="#docs">Документация</a>
+        <a href="#download">Скачать</a>
+        <a href="#community">Сообщество</a>
+        <a href="#blog">Блог</a>
+        <a href="#contact">Контакты</a>
+      </nav>
+    </div>
+  </header>
 
-    <!-- Навигация -->
-    <nav>
-        <ul class="nav-list">
-            <li><a href="#overview" class="nav-link active">Обзор</a></li>
-            <li><a href="#technology" class="nav-link">Технологии</a></li>
-            <li><a href
+  <!-- Главная страница -->
+  <section id="home" class="section home">
+    <div class="container">
+      <h1>Семантический анализ нового поколения</h1>
+      <p>Платформа для анализа текста, создания меток и генерации контента с поддержкой оффлайн‑режима.</p>
+      <button class="btn">Попробовать сейчас</button>
+      <div class="features">
+        <div class="feature">
+          <h3>Оффлайн‑работа</h3>
+          <p>Создавайте и редактируйте метки без интернета.</p>
+        </div>
+        <div class="feature">
+          <h3>Автоматическая синхронизация</h3>
+          <p>Данные синхронизируются при подключении к сети.</p>
+        </div>
+        <div class="feature">
+          <h3>Гибкая этика</h3>
+          <p>Модуль этики включается по необходимости.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- О проекте -->
+  <section id="about" class="section about">
+    <div class="container">
+      <h2>О проекте</h2>
+      <p>«СемантикМеш 2.0» — это открытая платформа для семантического анализа текста с акцентом на автономную работу и прозрачность решений.</p>
+      <div class="architecture">
+        <h3>Архитектура системы</h3>
+        <ul>
+          <li>Семантическое ядро (spaCy, BERT)</li>
+          <li>Модуль меток с оффлайн‑синхронизацией</li>
+          <li>Генератор контента на основе меток</li>
+          <li>Опциональный модуль этической оценки</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Документация -->
+  <section id="docs" class="section docs">
+    <div class="container">
+      <h2>Документация</h2>
+      <div class="docs-grid">
+        <div class="doc-item">
+          <h3>Начало работы</h3>
+          <p>Пошаговая инструкция по установке и запуску.</p>
+          <a href="#" class="link">Читать →</a>
+        </div>
+        <div class="doc-item">
+          <h3>API</h3>
+          <p>Описание эндпоинтов и форматов данных.</p>
+          <a href="#" class="link">Читать →</a>
+        </div>
+        <div class="doc-item">
+          <h3>Примеры кода</h3>
+          <p>Готовые фрагменты для интеграции.</p>
+          <a href="#" class="link">Смотреть →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Скачать -->
+  <section id="download" class="section download">
+    <div class="container">
+      <h2>Скачать</h2>
+      <div class="download-options">
+        <div class="option">
+          <h3>Для разработчиков</h3>
+          <p>Исходный код, Docker‑контейнер.</p>
+          <a href="https://github.com/ваш_репозиторий" class="btn">GitHub</a>
+        </div>
+        <div class="option">
+          <h3>Готовая сборка</h3>
+          <p>Преднастроенный образ для быстрого старта.</p>
+          <a href="#" class="btn">Скачать .zip</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Сообщество -->
+  <section id="community" class="section community">
+    <div class="container">
+      <h2>Сообщество</h2>
+      <p>Присоединяйтесь к обсуждению, делитесь идеями и помогайте развивать проект.</p>
+      <div class="links">
+        <a href="#" class="social-link">Discord</a>
+        <a href="#" class="social-link">Telegram</a>
+        <a href="#" class="social-link">Форум</a>
+        <a href="#" class="social-link">Вклад в проект</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Блог -->
+  <section id="blog" class="section blog">
+    <div class="container">
+      <h2>Блог</h2>
+      <div class="posts">
+        <article class="post">
+          <h3>Выпуск версии 1.2</h3>
+          <p>Добавлена поддержка многоязычных меток и улучшена синхронизация.</p>
+          <time>25.03.2026</time>
+        </article>
+        <article class="post">
+          <h3>Кейс: использование в образовании</h3>
+          <p>Как университет внедрил СемантикМеш для анализа студенческих работ.</p>
+          <time>15.03.2026</time>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Контакты -->
+  <section id="contact" class="section contact">
+    <div class="container">
+      <h2>Контакты</h2>
+      <form class="contact-form">
+        <input type="text" placeholder="Ваше имя" required>
+        <input type="email" placeholder="Email" required>
+        <textarea placeholder="Сообщение" rows="4" required></textarea>
+        <button type="submit" class="btn">Отправить</button>
+      </form>
+      <div class="contact-info">
+        <p>Email: info@semanticmesh.org</p>
+        <p>GitHub: github.com/semantic-mesh</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Подвал -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 СемантикМеш. Все права защищены.</p>
+      <div class="legal">
+        <a href="#">Лицензия</a>
+        <a href="#">Политика конфиденциальности</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,34 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f9f9f9;
 }
 
-header {
-    background: #2c3e50;
-    color: white;
-    text-align: center;
-    padding: 2rem 0;
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-section {
-    padding: 2rem;
-    border-bottom: 1px solid #eee;
-}
-
-.btn {
-    display: inline-block;
-    background: #3498db;
-    color: white;
-    padding: 1rem 2rem;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 1rem;
-}
-
-footer {
-    text-align: center;
-    padding: 2rem;
-    background: #ecf0f1;
-}
+/* Шапка */
+.header {
+  background: white;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  position: sticky;
+  top:

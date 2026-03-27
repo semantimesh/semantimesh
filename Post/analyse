@@ -4,4 +4,14 @@
 text (строка) — текст для анализа;
 
 ethical_mode (булево) — включать этическую проверку.
-
+json
+6 скрытых строк
+json
+{
+  "id": "label_001",
+  "text": "Искусственный интеллект",
+  "type": "concept",
+  "confidence": 0.95,
+  "timestamp": "2026-03-27T10:00:00Z",
+  "sync_status": "synced"
+}

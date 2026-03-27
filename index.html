@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SemantiMesh 2.0 — Автономный mesh‑блокчейн</title>
+    <title>SemantiMesh 2.0 — Технологии проекта</title>
     <style>
         * {
             margin: 0;
@@ -35,11 +35,42 @@
             padding: 0 20px;
         }
 
+        /* Навигация */
+        nav {
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-list {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 10px 15px;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            background: #3b82f6;
+            color: white;
+        }
+
         header {
             padding: 80px 0;
             text-align: center;
             background: rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(10px);
         }
 
         h1 {
@@ -71,7 +102,7 @@
 
         .tech-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 30px;
             padding: 0 20px;
         }
@@ -83,6 +114,7 @@
             backdrop-filter: blur(5px);
             border: 1px solid rgba(255, 255, 255, 0.2);
             transition: transform 0.3s ease;
+            cursor: pointer;
         }
 
         .tech-card:hover {
@@ -96,49 +128,31 @@
             font-size: 1.4rem;
         }
 
-        .metrics {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            gap: 20px;
-            padding: 0 20px;
-        }
-
-        .metric-card {
-            background: rgba(96, 165, 250, 0.2);
-            padding: 25px;
+        .tech-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
             border-radius: 10px;
-            text-align: center;
-            min-width: 200px;
+            margin-bottom: 15px;
         }
 
-        .metric-value {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #3b82f6;
+        .tech-detail {
+            display: none;
+            background: rgba(30, 41, 59, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 20px;
+            border-left: 4px solid #3b82f6;
+        }
+
+        .tech-detail.active {
+            display: block;
         }
 
         footer {
             text-align: center;
             padding: 40px 0;
             background: rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(10px);
-        }
-
-        .btn {
-            display: inline-block;
-            background: #3b82f6;
-            color: white;
-            padding: 12px 24px;
-            border-radius: 8px;
-            text-decoration: none;
-            margin-top: 20px;
-            fontweight: bold;
-            transition: background 0.3s;
-        }
-
-        .btn:hover {
-            background: #2563eb;
         }
     </style>
 </head>
@@ -146,70 +160,51 @@
     <!-- Динамический фон: сеть в движении -->
     <div id="network-bg"></div>
 
+    <!-- Навигация -->
+    <nav>
+        <ul class="nav-list">
+            <li><a href="#overview" class="nav-link active">Обзор</a></li>
+            <li><a href="#tinybert" class="nav-link">TinyBERT</a></li>
+            <li><a href="#mesh" class="nav-link">Mesh‑сеть</a></li>
+            <li><a href="#poa" class="nav-link">PoA Консенсус</a></li>
+            <li><a href="#security" class="nav-link">Безопасность</a></li>
+            <li><a href="#efficiency" class="nav-link">Энергоэффективность</a></li>
+        </ul>
+    </nav>
+
     <header>
         <div class="container">
             <h1>SemantiMesh 2.0</h1>
             <p class="tagline">Автономный mesh‑блокчейн с семантическим сжатием и офлайн‑платежами</p>
-            <a href="whitepaper.md" class="btn" style="margin-top: 30px;">Скачать Whitepaper</a>
         </div>
     </header>
 
-    <section id="problem">
+    <section id="overview">
         <div class="container">
-            <h2>Проблема</h2>
+            <h2>Обзор технологий</h2>
             <div class="tech-grid">
-                <div class="tech-card">
-                    <h3>Зависимость от интернета</h3>
-            <p>Традиционные блокчейны и платёжные системы требуют постоянного соединения с сетью.</p>
-                </div>
-                <div class="tech-card">
-            <h3>Высокие комиссии</h3>
-            <p>Банковские переводы и криптосети берут 1–5 % за транзакцию.</p>
-                </div>
-                <div class="tech-card">
-            <h3>Централизация</h3>
-            <p>Серверы могут быть отключены или взломаны.</p>
-                </div>
-                <div class="tech-card">
-            <h3>Энергозатратность</h3>
-            <p>Майнинг и ноды потребляют много энергии.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="solution">
-        <div class="container">
-            <h2>Решение</h2>
-            <div class="tech-grid">
-                <div class="tech-card">
-            <h3>Mesh‑сеть</h3>
-            <p>Ноды взаимодействуют через BLE (50–100 м), Wi‑Fi Direct (200 м), LoRa (10 км).</p>
-                </div>
-                <div class="tech-card">
-            <h3>Семантический блокчейн</h3>
-            <p>Данные сжимаются в метки (экономия трафика в 10–15×).</p>
-                </div>
-                <div class="tech-card">
-            <h3>Офлайн‑платежи</h3>
-            <p>Транзакции подтверждаются локально без интернета.</p>
-                </div>
-                <div class="tech-card">
-            <h3>Энергоэффективность</h3>
-            <p>Потребление ≤ 8 % батареи/час благодаря адаптивному режиму ноды.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="technology">
-        <div class="container">
-            <h2>Технологии</h2>
-            <div class="tech-grid">
-                <div class="tech-card">
+                <div class="tech-card" data-target="tinybert">
+                    <img src="images/tinybert.jpg" alt="TinyBERT" class="tech-image">
             <h3>TinyBERT</h3>
-            <p>Оптимизированная NLP‑модель (10 МБ) для семантического сжатия данных.</p>
+            <p>Оптимизированная NLP‑модель для семантического сжатия данных.</p>
                 </div>
-                <div class="tech-card">
-            <h3>Гибридная маршрутизация</h3>
-            <p>Flooding + AODV + кластеризация для
+                <div class="tech-card" data-target="mesh">
+            <img src="images/mesh-network.jpg" alt="Mesh‑сеть" class="tech-image">
+            <h3>Mesh‑сеть</h3>
+            <p>Гибридная маршрутизация через BLE, Wi‑Fi Direct и LoRa.</p>
+                </div>
+                <div class="tech-card" data-target="poa">
+            <img src="images/poa.jpg" alt="PoA Консенсус" class="tech-image">
+            <h3>PoA Консенсус</h3>
+            <p>Proof of Activity с супер‑валидаторами для синхронизации.</p>
+                </div>
+                <div class="tech-card" data-target="security">
+            <img src="images/security.jpg" alt="Безопасность" class="tech-image">
+            <h3>Безопасность</h3>
+            <p>AES‑256 шифрование и ECDSA подписи.</p>
+                </div>
+                <div class="tech-card" data-target="efficiency">
+            <img src="images/efficiency.jpg" alt="Энергоэффективность" class="tech-image">
+            <h3>Энергоэффективность</h3>
+            <p>Адаптивный режим ноды и оптимизация NLP‑модели.</p>
+                </div>

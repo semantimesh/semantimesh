@@ -11,3 +11,4 @@ def test_import_packages():
         print("Все пакеты успешно импортированы!")
     except ImportError as e:
         assert False, f"Ошибка импорта пакета: {e}"
+Add basic import test

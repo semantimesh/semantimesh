@@ -26,4 +26,190 @@
             width: 100%;
             height: 100%;
             z-index: -1;
-            background:
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            padding: 80px 0;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .tagline {
+            font-size: 1.5rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        section {
+            padding: 80px 0;
+            background: rgba(10, 25, 45, 0.8);
+            margin-bottom: 2px;
+            backdrop-filter: blur(10px);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.2rem;
+            color: #60a5fa;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 0 20px;
+        }
+
+        .tech-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .tech-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .tech-card h3 {
+            color: #60a5fa;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        .metrics {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 0 20px;
+        }
+
+        .metric-card {
+            background: rgba(96, 165, 250, 0.2);
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            min-width: 200px;
+        }
+
+        .metric-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #3b82f6;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn {
+            display: inline-block;
+            background: #3b82f6;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            margin-top: 20px;
+            fontweight: bold;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #2563eb;
+        }
+    </style>
+</head>
+<body>
+    <!-- Динамический фон: сеть в движении -->
+    <div id="network-bg"></div>
+
+    <header>
+        <div class="container">
+            <h1>SemantiMesh 2.0</h1>
+            <p class="tagline">Автономный mesh‑блокчейн с семантическим сжатием и офлайн‑платежами</p>
+            <a href="whitepaper.md" class="btn" style="margin-top: 30px;">Скачать Whitepaper</a>
+        </div>
+    </header>
+
+    <section id="problem">
+        <div class="container">
+            <h2>Проблема</h2>
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <h3>Зависимость от интернета</h3>
+            <p>Традиционные блокчейны и платёжные системы требуют постоянного соединения с сетью.</p>
+                </div>
+                <div class="tech-card">
+            <h3>Высокие комиссии</h3>
+            <p>Банковские переводы и криптосети берут 1–5 % за транзакцию.</p>
+                </div>
+                <div class="tech-card">
+            <h3>Централизация</h3>
+            <p>Серверы могут быть отключены или взломаны.</p>
+                </div>
+                <div class="tech-card">
+            <h3>Энергозатратность</h3>
+            <p>Майнинг и ноды потребляют много энергии.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="solution">
+        <div class="container">
+            <h2>Решение</h2>
+            <div class="tech-grid">
+                <div class="tech-card">
+            <h3>Mesh‑сеть</h3>
+            <p>Ноды взаимодействуют через BLE (50–100 м), Wi‑Fi Direct (200 м), LoRa (10 км).</p>
+                </div>
+                <div class="tech-card">
+            <h3>Семантический блокчейн</h3>
+            <p>Данные сжимаются в метки (экономия трафика в 10–15×).</p>
+                </div>
+                <div class="tech-card">
+            <h3>Офлайн‑платежи</h3>
+            <p>Транзакции подтверждаются локально без интернета.</p>
+                </div>
+                <div class="tech-card">
+            <h3>Энергоэффективность</h3>
+            <p>Потребление ≤ 8 % батареи/час благодаря адаптивному режиму ноды.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="technology">
+        <div class="container">
+            <h2>Технологии</h2>
+            <div class="tech-grid">
+                <div class="tech-card">
+            <h3>TinyBERT</h3>
+            <p>Оптимизированная NLP‑модель (10 МБ) для семантического сжатия данных.</p>
+                </div>
+                <div class="tech-card">
+            <h3>Гибридная маршрутизация</h3>
+            <p>Flooding + AODV + кластеризация для
